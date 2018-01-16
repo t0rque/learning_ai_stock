@@ -8,7 +8,7 @@ def test_run():
     df1 = pd.DataFrame(index=dates)
 
     #read SPY info with date indexing
-    dfSPY = pd.read_csv("SPY.csv", index_col="Date", parse_dates=True)
+    dfSPY = pd.read_csv("data/SPY.csv", index_col="Date", parse_dates=True)
     print dfSPY
 
     #update the empty frame with SPY details.

@@ -1,7 +1,7 @@
 import pandas as pd
 
 def test_run():
-    df = pd.read_csv("AAPL.csv")
+    df = pd.read_csv("data/AAPL.csv")
     print 8*"#" + "Head" + 8*"#"
     print df.head()
     print 8*"#" + "tail" + 8*"#"

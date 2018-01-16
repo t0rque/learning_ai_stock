@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 
 def test_run():
@@ -8,7 +9,7 @@ def test_run():
     df1 = pd.DataFrame(index=dates)
 
     #read SPY info with date indexing
-    dfSPY = pd.read_csv("SPY.csv", index_col="Date", parse_dates=True, usecols=['Date', 'Adj Close'], na_values=['nan'])
+    dfSPY = pd.read_csv("data/SPY.csv", index_col="Date", parse_dates=True, usecols=['Date', 'Adj Close'], na_values=['nan'])
 
     #rename the column from Adj Close to stock name so that join doesnt complain about column name and 
     # data can be sorted based on stock symbol
@@ -20,7 +21,7 @@ def test_run():
     #Read More Stocks
     symbols = ['GOOG', 'IBM', 'GLD']
     for symbol in symbols:
-        df1_temp = pd.read_csv("{}.csv".format(symbol), index_col="Date", parse_dates=True, usecols=['Date', 'Adj Close'], na_values=['nan'])
+        df1_temp = pd.read_csv("data/{}.csv".format(symbol), index_col="Date", parse_dates=True, usecols=['Date', 'Adj Close'], na_values=['nan'])
     #rename the column from Adj Close to stock name so that join doesnt complain about column name and 
     # data can be sorted based on stock symbol
         df1_temp = df1_temp.rename(columns={'Adj Close':symbol})
